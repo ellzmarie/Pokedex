@@ -27,27 +27,63 @@ app.get('/pokemon/new', (req, res) => {
 
 // DELETE / DESTROY
 app.delete('/pokemon/:indexOfPokemon', (req, res) => {
-    allPokemon.splice(req.params.indexOfPokemon, 1)
+    pokemonData.splice(req.params.indexOfPokemon, 1),
     res.redirect('/pokemon')
 })
 
 // UPDATE
+app.put('/pokemon/:indexOfPokemon', (req, res) => {
+    let pokemonStats = {
+        hp: req.body.hp,
+        attack: req.body.attack,
+        defense: req.body.defense,
+        spattack: req.body.spattack,
+        spdefense: req.body.spdefense,
+        speed: req.body.speed
+    }
+    let editPokemon = {
+        name: req.body.name,
+        img: req.body.img,
+        type: req.body.type,
+        stats: stats
+    }
+    pokemonData[req.params.indexOfPokemon] = editPokemon
+    res.redirect('/pokemon')
+})
 
 // CREATE
+app.post('/pokemon', (req,res) => {
+
+    let pokemonStats = {
+        hp: req.body.hp,
+        attack: req.body.attack,
+        defense: req.body.defense,
+        spattack: req.body.spattack,
+        spdefense: req.body.spdefense,
+        speed: req.body.speed
+    }
+    let newPokemon = {
+        name: req.body.name,
+        img: req.body.img,
+        type: req.body.type,
+        stats: stats
+    }
+    pokemonData.push(newPokemon)
+    res.redirect('/pokemon')
+})
 
 // EDIT
 app.get('/pokemon/:indexOfPokemon/edit', (req, res) => {
     res.render('edit.ejs', {
         allPokemon: pokemonData[req.params.indexOfPokemon],
-        index: req.params.indexOfPokemon,
+        indexOfPokemon: req.params.indexOfPokemon,
     })
-    res.redirect('/pokemon')
 })
 
 // SHOW
-app.get('/pokemon/:id', (req, res) => {
+app.get('/pokemon/:indexOfPokemon', (req, res) => {
     res.render('show.ejs', { 
-        allPokemon: pokemonData[req.params.id] 
+        allPokemon: pokemonData[req.params.indexOfPokemon] 
     });
 });
 

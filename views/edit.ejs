@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>Edit Pokemon Page</h1>
-    <form actions="/pokemon" method="POST">
+    <form actions="/pokemon/<%=indexOfPokemon%>?_method=PUT" method="POST">
         <label for="name">Name:</label>
         <input type="text" name="name"/><br><br>
         <label for="img">Image URL:</label>
@@ -28,11 +28,9 @@
         <label for="speed">Speed:</label>
         <input type="text" name="speed"/><br><br>
 
-        <button class="new-btn"><a href="/pokemon"></a>Submit</button>
+        <button class="new-btn"><a href="/pokemon">Submit</a></button>
         <br><br>
-        <button class="back-btn"><a href="/pokemon"></a>Back to Pokedex</button>
+        <button class="back-btn"><a href="/pokemon">Back to the Pokedex</a></button>
     </form>
-</body>
-  
 </body>
 </html>
