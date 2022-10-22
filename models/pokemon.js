@@ -1,4 +1,4 @@
-let pokemon = [
+const pokemonData = [
   {
     id: "001",
     name: "Bulbasaur",
@@ -50959,4 +50959,4 @@ let pokemon = [
   }
 ];
 
-module.exports = pokemon
+module.exports = pokemonData

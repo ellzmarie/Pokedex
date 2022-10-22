@@ -7,19 +7,20 @@
     <title>Pokemon Index Page</title>
 </head>
 <body>
-    
-    <h1>Gotta catch 'em all!</h1>
+
+    <h1>Welcome to the Pokedex</h1>
 
     <ul>
         <% for(let i = 0; i < allPokemon.length; i++) { %>
-        <li>
-            <% allPokemon[i].id %>
-            <a href="/pokedex/<%=i%>"><% allPokemon[i].name %></a>
-            <% allPokemon[i].img %>
-        </li>
+            <li>
+                <a href="/pokemon/<%=i%>"><img src=<%=allPokemon[i].img %>></a>
+
+                <form action="/pokemon/<%=i%>?_method=DELETE" method="POST">
+                    <input type="submit" value="DELETE" />
+                    <button><a href="/pokemon/<%=i%>/edit">Edit</a></button>
+                </form>
+            </li>
         <% } %>
-    </ul>
-    
-    
+    </ul>   
 </body>
 </html>

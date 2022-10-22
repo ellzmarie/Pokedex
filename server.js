@@ -1,48 +1,55 @@
 // Dependencies 
 const express = require('express')
+const pokemonData = require('./models/pokemon.js');
+const methodOverride = require('method-override');
 const app = express()
-const mongoose = require('mongoose');
-const pokemon = require('./models/pokemon.js');
+
+app.use(express.urlencoded({extended:false}))
+app.use(methodOverride('_method'));
 
 require('dotenv').config()
 
 const PORT = process.env.PORT
 
-mongoose.connect(process.env.DATABASE_URL, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-})
-
-// DATABASE CONNECTION LOGS
-const db = mongoose.connection
-db.on('error', (err) => console.log(err.message))
-db.on('connected', () => console.log("mongo connected"))
-db.on('disconnected', () => console.log("mongo disconnected"))
-
-app.use(express.urlencoded(({extended:false})))
-
-// INDUCE
 // INDEX
-app.get('/pokedex', (req, res) => {
+app.get('/pokemon', (req, res) => {
+    // res.send(pokemonData)
     res.render('index.ejs', {
-        allPokemon: pokemon,
+        allPokemon: pokemonData,
         title: 'index'
     })
 })
 
 // NEW
-
+app.get('/pokemon/new', (req, res) => {
+    res.render('new.ejs')
+})
 
 // DELETE / DESTROY
+app.delete('/pokemon/:indexOfPokemon', (req, res) => {
+    allPokemon.splice(req.params.indexOfPokemon, 1)
+    res.redirect('/pokemon')
+})
 
 // UPDATE
 
 // CREATE
 
 // EDIT
+app.get('/pokemon/:indexOfPokemon/edit', (req, res) => {
+    res.render('edit.ejs', {
+        allPokemon: pokemonData[req.params.indexOfPokemon],
+        index: req.params.indexOfPokemon,
+    })
+    res.redirect('/pokemon')
+})
 
 // SHOW
-
+app.get('/pokemon/:id', (req, res) => {
+    res.render('show.ejs', { 
+        allPokemon: pokemonData[req.params.id] 
+    });
+});
 
 // Listener
 app.listen(PORT, () => console.log(`you are listening to port ${PORT}...`))

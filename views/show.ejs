@@ -6,7 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Show Pokemon</title>
 </head>
+
 <body>
-    
-</body>
-</html>
+    <div class ="flex-container">
+
+        <div><img src=<%= allPokemon.img %>></div> 
+         <div class="data">
+              <div>
+                  <h2>            <%= allPokemon.name %></h2>
+                  <div>type:      <%= allPokemon.type%></div>
+                  <div>hp:        <%= allPokemon.stats.hp %></div>
+                  <div>attack:    <%= allPokemon.stats.attack %></div>
+                  <div>defence:   <%= allPokemon.stats.defense %></div>
+                  <div>spattack:  <%= allPokemon.stats.spattack %></div>
+                  <div>spdefense: <%= allPokemon.stats.spdefense %></div>
+                  <div>speed:     <%= allPokemon.stats.speed %></div>
+  
+              </div>
+          </div>
+          <br>
+          <button class = 'btn'><a href="/pokemon">Back to Pokédex</a></button>
+          <button class = 'btn'><a href="/pokemon/new">Add a new Pokemon</a></button>
+      </div>
+  </body>
