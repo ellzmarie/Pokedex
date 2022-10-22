@@ -1,37 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('./partials/head.ejs')%>
     <title>Add a New Pokemon</title>
 </head>
 <body>
+    <!-- ============ HEADER ============ -->
+    <%- include('./partials/header.ejs')%>  
     <h1>Add a New Pokemon</h1>
+    <div class="body-overlay">
 
-    <form actions="/pokemon" method="POST">
-        <label for="name">Name:</label>
-        <input type="text" name="name"/><br><br>
-        <label for="img">Image URL:</label>
-        <input type="img" name="img"/><br><br>
-        <label for="type">Type:</label>
-        <input type="text" name="type"/><br><br>
-        <label for="hp">HP:</label>
-        <input type="text" name="hp"/><br><br>
-        <label for="attack">Attack:</label>
-        <input type="text" name="attack"/><br><br>
-        <label for="defense">Defense:</label>
-        <input type="text" name="defense"/><br><br>
-        <label for="spattack">SPAttack:</label>
-        <input type="text" name="spattack"/><br><br>
-        <label for="spdefense">SPDefense:</label>
-        <input type="text" name="spdefense"/><br><br>
-        <label for="speed">Speed:</label>
-        <input type="text" name="speed"/><br><br>
+        <!-- ============ MAIN ============ -->
+        <main class="show-main">
+            <form actions="/pokemon" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" name="name"/><br><br>
+                <label for="img">Image URL:</label>
+                <input type="img" name="img"/><br><br>
+                <label for="type">Type:</label>
+                <input type="text" name="type"/><br><br>
+                <label for="hp">HP:</label>
+                <input type="text" name="hp"/><br><br>
+                <label for="attack">Attack:</label>
+                <input type="text" name="attack"/><br><br>
+                <label for="defense">Defense:</label>
+                <input type="text" name="defense"/><br><br>
+                <label for="spattack">SPAttack:</label>
+                <input type="text" name="spattack"/><br><br>
+                <label for="spdefense">SPDefense:</label>
+                <input type="text" name="spdefense"/><br><br>
+                <label for="speed">Speed:</label>
+                <input type="text" name="speed"/><br><br>
 
-        <button class="new-btn"><a href="/pokemon">Submit a new Pokemon!</a></button>
-        <br><br>
-        <button class="back-btn"><a href="/pokemon">Back to Pokedex</a></button>
-    </form>
+                <button class="new-btn"><a href="/pokemon">Submit</a></button>
+                <br><br>
+            </form>
+        </main>
+    </div>
 </body>
 </html>
