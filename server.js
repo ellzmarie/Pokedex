@@ -6,7 +6,7 @@ const app = express()
 
 app.use(express.urlencoded({extended:false}))
 app.use(methodOverride('_method'));
-app.use(express.static('/public'));
+app.use(express.static('public'));
 
 require('dotenv').config()
 

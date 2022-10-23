@@ -7,12 +7,11 @@
 
 <body>
     <div class ="body-overlay">
-        <!-- ============ HEADER ============ -->
-        <%- include('./partials/header.ejs')%>
-
-        <!-- ============ MAIN ============ -->
+    <!-- ============ HEADER ============ -->
+    <%- include('./partials/header.ejs')%>
+    <!-- ============ MAIN ============ -->
         <main class="show-main">
-            <div><img src=<%= allPokemon.img %>></div> 
+            <div><img src="<%= allPokemon.img %>"></div> 
             <div class="data">
                 <div>
                     <h2> <%= allPokemon.name %></h2>
@@ -26,7 +25,7 @@
                 </div>
             </div>
             <br>
-            <button class = 'btn'><a href="/pokemon/new">Add a new Pokemon</a></button>
+            <!-- <button class = 'btn'><a href="/pokemon/new">Add a new Pokemon</a></button> -->
             </div>
         </main>
   </body>
