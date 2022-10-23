@@ -3,14 +3,38 @@
 <head>
     <%- include('./partials/head.ejs')%>
     <title>Edit Pokemon</title>
+    <style>
+        .topnav {
+        background-color: #FC6238;
+        overflow: hidden;
+        }
+  
+  /* Style the links inside the navigation bar */
+        .topnav a {
+            float: right;
+            color: black;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+        body {
+        background-color: #FFD872;
+        margin: 0;
+        padding: 0;
+        }
+        .show-main {
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-    <div class="body-overlay">
+    <div class="container">
         <!-- ============ HEADER ============ -->
         <%- include('./partials/header.ejs')%>
         <!-- ============ MAIN ============ -->
         <main class="show-main">
-        <h1>Edit Pokemon Page</h1>
+        <h1>Edit Pokemon</h1>
             <form actions="/pokemon/<%=indexOfPokemon%>?_method=PUT" method="POST">
                 <label for="name">Name:</label>
                 <input type="text" name="name"/><br><br>

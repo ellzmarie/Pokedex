@@ -3,12 +3,39 @@
 <head>
     <%- include('./partials/head.ejs')%>
     <title>Add a New Pokemon</title>
+    <style>
+        .topnav {
+        background-color: #FC6238;
+        overflow: hidden;
+        }
+  
+  /* Style the links inside the navigation bar */
+        .topnav a {
+            float: right;
+            color: black;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+        body {
+        background-color: #FFD872;
+        margin: 0;
+        padding: 0;
+        }
+        .show-main {
+            text-align: center;
+        }
+        h1 {
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
+    <div class="container">
     <!-- ============ HEADER ============ -->
     <%- include('./partials/header.ejs')%>  
     <h1>Add a New Pokemon</h1>
-    <div class="body-overlay">
 
         <!-- ============ MAIN ============ -->
         <main class="show-main">

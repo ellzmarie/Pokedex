@@ -13,6 +13,10 @@ img {
     border-radius: 10px;
 }
 
+img:hover {
+    transform: scaleX(-1);
+  }
+
 .container {
     /* border: 5px solid #FC6238;  */
     border-radius: 5px;
@@ -34,6 +38,10 @@ button {
     border: 2px solid black;
 }
 
+.data {
+    justify-content: center;
+}
+
 /*top nav*/
 .topnav {
     background-color: #FC6238;
@@ -43,7 +51,7 @@ button {
   /* Style the links inside the navigation bar */
   .topnav a {
     float: right;
-    color: #f2f2f2;
+    color: black;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -52,7 +60,8 @@ button {
   
   /* Change the color of links on hover */
   .topnav a:hover {
-    background-color: #ddd;
+    background-color: #ABC270;
+    ;
     color: black;
   }
   
@@ -60,3 +69,4 @@ button {
   .topnav a.active {
     background-color: #04AA6D;
     color: white;
+

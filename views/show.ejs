@@ -3,25 +3,52 @@
 <head>
     <%- include('./partials/head.ejs')%>
     <title>Show Pokemon</title>
+    <style>
+        .topnav {
+        background-color: #FC6238;
+        overflow: hidden;
+        }
+  
+  /* Style the links inside the navigation bar */
+        .topnav a {
+            float: right;
+            color: black;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+        body {
+        background-color: #FFD872;
+        margin: 0;
+        padding: 0;
+        }
+        .show-main {
+            text-align: center;
+        }
+        h1 {
+            text-align: center;
+        }
+    </style>
 </head>
 
 <body>
-    <div class ="body-overlay">
+    <div class="container">
     <!-- ============ HEADER ============ -->
     <%- include('./partials/header.ejs')%>
     <!-- ============ MAIN ============ -->
         <main class="show-main">
+            <h2> <%= allPokemon.name %></h2>
             <div><img src="<%= allPokemon.img %>"></div> 
             <div class="data">
-                <div>
-                    <h2> <%= allPokemon.name %></h2>
-                    <div>type: <%= allPokemon.type%></div>
-                    <div>hp: <%= allPokemon.stats.hp %></div>
-                    <div>attack: <%= allPokemon.stats.attack %></div>
-                    <div>defence: <%= allPokemon.stats.defense %></div>
-                    <div>spattack: <%= allPokemon.stats.spattack %></div>
-                    <div>spdefense: <%= allPokemon.stats.spdefense %></div>
-                    <div>speed: <%= allPokemon.stats.speed %></div>    
+                <div>                   
+                    <div class="type">Type: <%= allPokemon.type%></div>
+                    <div>Hp: <%= allPokemon.stats.hp %></div>
+                    <div>Attack: <%= allPokemon.stats.attack %></div>
+                    <div>Defence: <%= allPokemon.stats.defense %></div>
+                    <div>Spattack: <%= allPokemon.stats.spattack %></div>
+                    <div>Spdefense: <%= allPokemon.stats.spdefense %></div>
+                    <div>Speed: <%= allPokemon.stats.speed %></div>    
                 </div>
             </div>
             <br>
