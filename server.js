@@ -34,19 +34,19 @@ app.delete('/pokemon/:indexOfPokemon', (req, res) => {
 
 // UPDATE
 app.put('/pokemon/:indexOfPokemon', (req, res) => {
-    let pokemonStats = {
-        hp: req.body.hp,
-        attack: req.body.attack,
-        defense: req.body.defense,
-        spattack: req.body.spattack,
-        spdefense: req.body.spdefense,
-        speed: req.body.speed
-    }
+
     let editPokemon = {
         name: req.body.name,
         img: req.body.img,
         type: req.body.type,
-        stats: stats
+        stats: {
+            hp: req.body.hp,
+            attack: req.body.attack,
+            defense: req.body.defense,
+            spattack: req.body.spattack,
+            spdefense: req.body.spdefense,
+            speed: req.body.speed
+        }
     }
     pokemonData[req.params.indexOfPokemon] = editPokemon
     res.redirect('/pokemon')
@@ -55,19 +55,18 @@ app.put('/pokemon/:indexOfPokemon', (req, res) => {
 // CREATE
 app.post('/pokemon', (req,res) => {
 
-    let pokemonStats = {
-        hp: req.body.hp,
-        attack: req.body.attack,
-        defense: req.body.defense,
-        spattack: req.body.spattack,
-        spdefense: req.body.spdefense,
-        speed: req.body.speed
-    }
     let newPokemon = {
         name: req.body.name,
         img: req.body.img,
         type: req.body.type,
-        stats: stats
+        stats: {
+            hp: req.body.hp,
+            attack: req.body.attack,
+            defense: req.body.defense,
+            spattack: req.body.spattack,
+            spdefense: req.body.spdefense,
+            speed: req.body.speed
+        }
     }
     pokemonData.push(newPokemon)
     res.redirect('/pokemon')
