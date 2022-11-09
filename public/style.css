@@ -1,3 +1,5 @@
+/* I would keep all of your styles here instead of peppering some styling in your ejs files */
+
 body {
     background-color: #FFD872;
     margin: 0;
@@ -7,12 +9,13 @@ body {
 h1 {
     text-align: center;
 }
-
+/* I would standardize height and width so that new user images match your other images */
 img {
-    width: 50%;
+    width: 250px;
+    height: 250px;
     border-radius: 10px;
 }
-
+/* your transform looks soooo cool! */
 img:hover {
     transform: scaleX(-1);
   }
@@ -70,3 +73,4 @@ button {
     background-color: #04AA6D;
     color: white;
 
+  }

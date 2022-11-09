@@ -10,7 +10,7 @@ app.use(express.static('public'));
 
 require('dotenv').config()
 
-const PORT = process.env.PORT
+const PORT = 3000
 
 // INDEX
 app.get('/pokemon', (req, res) => {
@@ -74,6 +74,7 @@ app.post('/pokemon', (req,res) => {
 
 // EDIT
 app.get('/pokemon/:indexOfPokemon/edit', (req, res) => {
+    //i would use allPokemon in your form as value so the user can see what the previous values are
     res.render('edit.ejs', {
         allPokemon: pokemonData[req.params.indexOfPokemon],
         indexOfPokemon: req.params.indexOfPokemon,

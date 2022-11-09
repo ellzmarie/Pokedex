@@ -37,23 +37,23 @@
         <h1>Edit Pokemon</h1>
             <form action="/pokemon/<%=indexOfPokemon%>?_method=PUT" method="POST">
                 <label for="name">Name:</label>
-                <input type="text" name="name"/><br><br>
+                <input type="text" name="name" value='<%=allPokemon.name%>'/><br><br>
                 <label for="img">Image URL:</label>
-                <input type="img" name="img"/><br><br>
+                <input type="img" name="img"value='<%=allPokemon.img%>'/><br><br>
                 <label for="type">Type:</label>
-                <input type="text" name="type"/><br><br>
+                <input type="text" name="type" value='<%=allPokemon.type%>'/><br><br>
                 <label for="hp">HP:</label>
-                <input type="text" name="hp"/><br><br>
+                <input type="text" name="hp" value='<%=allPokemon.stats.hp%>'/><br><br>
                 <label for="attack">Attack:</label>
-                <input type="text" name="attack"/><br><br>
+                <input type="text" name="attack" value='<%=allPokemon.stats.attack%>'/><br><br>
                 <label for="defense">Defense:</label>
-                <input type="text" name="defense"/><br><br>
+                <input type="text" name="defense" value='<%=allPokemon.stats.defense%>'/><br><br>
                 <label for="spattack">SPAttack:</label>
-                <input type="text" name="spattack"/><br><br>
+                <input type="text" name="spattack" value='<%=allPokemon.stats.spattack%>'/><br><br>
                 <label for="spdefense">SPDefense:</label>
-                <input type="text" name="spdefense"/><br><br>
+                <input type="text" name="spdefense" value='<%=allPokemon.stats.spdefense%>'/><br><br>
                 <label for="speed">Speed:</label>
-                <input type="text" name="speed"/><br><br>
+                <input type="text" name="speed" value='<%=allPokemon.stats.speed%>'/><br><br>
 
                 <input class="new-btn" type="submit"><a href="/pokemon"></a>
                 <br><br>
